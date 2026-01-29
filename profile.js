@@ -3,7 +3,7 @@
 // Comments: name + optional Quick Info + comment text
 // Past Hot Guys: shows people with category === "hot-history"
 
-const STORAGE_KEY = "ms_people_v1";
+const STORAGE_KEY = "ms_people_v2";
 
 function safeParse(json, fallback) { try { return JSON.parse(json); } catch { return fallback; } }
 function escapeHtml(str) {

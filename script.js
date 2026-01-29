@@ -11,33 +11,39 @@ function seedIfEmpty() {
   if (existing.length > 0) return;
 
   const seeded = [
-    { id:"hotguy-damson", category:"hot", badge:"Hot Guy of the Week", name:"Damson",
+    {
+      id: "hotguy-mathew", category: "hot", badge: "Hot Guy of the Week", name: "Mathew",
+      caption: "Spotted between classes",
+      about: ["Major: BMOS", "Year: 2nd", "Age: (optional)"],
+      photoUrl:"./images/mathew.jpg", createdAt:Date.now()
+    },
+    { id:"hotguy-damson", category:"hot-history", badge:"Past Hot Guy", name:"Damson",
       caption:"save a horse, ride a mustang 🐎",
-      about:["Age: (optional)", "Major: (optional)", "Year: (optional)"],
+      aboutFields: { age: "21", major: "BMOS", year: "3rd" },
       photoUrl:"./images/damson.jpg", createdAt:Date.now()
     },
     { id:"hm-theo", category:"honorable", badge:"Honorable Mention", name:"Theo",
-      caption:"Respectfully… wow.",
+      caption:" ",
       about:["Age: (optional)", "Major: (optional)", "Year: (optional)"],
       photoUrl:"./images/theo.jpg", createdAt:Date.now()
     },
     { id:"p-martin", category:"other", badge:"Profile", name:"Martin",
-      caption:"Campus legend energy.",
+      caption:"",
       about:["Age: (optional)", "Major: (optional)", "Year: (optional)"],
       photoUrl:"./images/martin.jpg", createdAt:Date.now()
     },
     { id:"p-callum", category:"other", badge:"Profile", name:"Callum",
-      caption:"Spotted being iconic.",
+      caption:"",
       about:["Age: (optional)", "Major: (optional)", "Year: (optional)"],
       photoUrl:"./images/callum.jpg", createdAt:Date.now()
     },
     { id:"p-jacob", category:"other", badge:"Profile", name:"Jacob",
-      caption:"Main character vibes.",
+      caption:"",
       about:["Age: (optional)", "Major: (optional)", "Year: (optional)"],
       photoUrl:"./images/jacob.jpg", createdAt:Date.now()
     },
     { id:"p-keith", category:"other", badge:"Profile", name:"Keith",
-      caption:"Mustang certified.",
+      caption:"",
       about:["Age: (optional)", "Major: (optional)", "Year: (optional)"],
       photoUrl:"./images/keith.jpg", createdAt:Date.now()
     }

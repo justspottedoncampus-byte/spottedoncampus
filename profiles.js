@@ -1,7 +1,7 @@
 // profiles.js
 // Seeds defaults once. Renders Past Hot Guys archive + Other Profiles (only).
 
-const STORAGE_KEY = "ms_people_v1";
+const STORAGE_KEY = "ms_people_v2";
 
 function safeParse(json, fallback) { try { return JSON.parse(json); } catch { return fallback; } }
 function loadPeople() { return safeParse(localStorage.getItem(STORAGE_KEY) || "[]", []); }
@@ -47,15 +47,17 @@ function seedIfEmpty() {
     },
     {
   id: "p-mathew",
-  category: "hot", // or "honorable" or "other"
+  category: "hot",
   badge: "Hot Guy of the Week",
   name: "Mathew",
   caption: "Spotted between classes",
-  about: [
-    "Major: (BMOS)",
-    "Year: (2nd)",
-    "IG: (optional)"
-  ],
+  aboutFields: {
+    major: "BMOS",
+    year: "2nd",
+    age: "—",
+    ig: "@—"
+  },
+  verifiedFields: [],
   photoUrl: "./images/mathew.jpg",
   createdAt: Date.now()
 },
