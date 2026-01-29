@@ -50,49 +50,67 @@
         <h3>About</h3>
         <ul class="small" id="pAbout"></ul>
 
-        <!-- DM to verify -->
+        <!-- Verify -->
         <div class="verify-banner">
           <div class="pill">Verify info</div>
           <p class="small muted" style="margin:8px 0 0;">
-            If any info here is wrong (or you want it verified), DM us on Instagram:
+            If anything here is wrong (or you want it verified), DM us on Instagram:
             <a class="verify-link" href="https://instagram.com/YOUR_HANDLE" target="_blank" rel="noreferrer">@YOUR_HANDLE</a>
+          </p>
+          <p class="small muted" style="margin:6px 0 0;">
+            ★ means verified.
           </p>
         </div>
 
-        <!-- Prompt to add missing info -->
-        <div class="verify-banner" style="margin-top:10px;">
-          <div class="pill">Help fill in the blanks</div>
-          <p class="small muted" style="margin:8px 0 0;">
-            Know their <b>major</b>, <b>year</b>, or other basic info? Drop it in the comments like:
-            <br><span class="small">“Major: BMOS • Year: 3rd”</span>
-       
-
         <div class="divider"></div>
 
-        <h3>Comments</h3>
-        <form id="commentForm" class="form">
+        <!-- Info submissions -->
+        <h3>Help fill in the profile</h3>
+        <p class="small muted" style="margin-top:6px;">
+          Only submit info that helps complete their description (major, year, IG, etc.). Consent only.
+        </p>
+
+        <form id="infoForm" class="form">
           <label class="field">
-            <span>Your name (optional)</span>
-            <input id="commentName" maxlength="40" placeholder="Anonymous" />
+            <span>Info type</span>
+            <select id="infoType" required>
+              <option value="">Select…</option>
+              <option value="major">Major</option>
+              <option value="year">Year</option>
+              <option value="age">Age</option>
+              <option value="ig">IG</option>
+              <option value="program">Program</option>
+              <option value="faculty">Faculty</option>
+              <option value="residence">Residence</option>
+            </select>
           </label>
 
-          <!-- Quick Info -->
           <label class="field">
-            <span>Quick info (optional)</span>
-            <input id="commentInfo" maxlength="80" placeholder="e.g. BMOS • 3rd year • 21" />
+            <span>Info value</span>
+            <input
+              id="infoValue"
+              maxlength="60"
+              required
+              placeholder="e.g. BMOS / 3rd year / @username"
+            />
           </label>
 
           <label class="field">
-            <span>Comment</span>
-            <textarea id="commentText" maxlength="200" required placeholder="Leave a comment… (keep it respectful)"></textarea>
+            <span>How do you know? (optional)</span>
+            <input
+              id="infoSource"
+              maxlength="80"
+              placeholder="friend / self / saw on IG / etc."
+            />
           </label>
 
-          <button class="button primary" type="submit">Post comment</button>
+          <button class="button primary" type="submit">Submit info</button>
         </form>
 
         <div class="divider"></div>
 
-        <ul id="commentList" class="comment-list"></ul>
+        <h3 style="margin-top:0;">Recent info submissions</h3>
+        <ul id="infoList" class="comment-list"></ul>
       </div>
     </div>
   </main>
