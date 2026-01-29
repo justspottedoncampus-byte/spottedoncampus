@@ -19,8 +19,8 @@ function seedIfEmpty() {
     // Current featured (used on main page)
     {
   id: "hotguy-damson",
-  category: "hot",
-  badge: "Hot Guy of the Week",
+  category: "hot-history",
+  badge: "Past Hot Guy",
   name: "Damson",
   caption: "🐎",
   aboutFields: {
@@ -45,6 +45,21 @@ function seedIfEmpty() {
       photoUrl: "./images/theo.jpg",
       createdAt: daysAgo(0)
     },
+    {
+  id: "p-mathew",
+  category: "hot", // or "honorable" or "other"
+  badge: "Hot Guy of the Week",
+  name: "Mathew",
+  caption: "Spotted between classes",
+  about: [
+    "Major: (BMOS)",
+    "Year: (2nd)",
+    "IG: (optional)"
+  ],
+  photoUrl: "./images/mathew.jpg",
+  createdAt: Date.now()
+},
+
 
     // Other profiles (these show on Profiles page)
     {
