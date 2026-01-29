@@ -17,6 +17,22 @@ function seedIfEmpty() {
 
   const seeded = [
     // Current featured (used on main page)
+      {
+  id: "p-mathew",
+  category: "hot",
+  badge: "Hot Guy of the Week",
+  name: "Mathew",
+  caption: "Spotted between classes",
+  aboutFields: {
+    major: "BMOS",
+    year: "2nd",
+    age: "—",
+    ig: "@—"
+  },
+  verifiedFields: [],
+  photoUrl: "./images/mathew.jpg",
+  createdAt: Date.now()
+},
     {
   id: "hotguy-damson",
   category: "hot-history",
@@ -45,22 +61,6 @@ function seedIfEmpty() {
       photoUrl: "./images/theo.jpg",
       createdAt: daysAgo(0)
     },
-    {
-  id: "p-mathew",
-  category: "hot",
-  badge: "Hot Guy of the Week",
-  name: "Mathew",
-  caption: "Spotted between classes",
-  aboutFields: {
-    major: "BMOS",
-    year: "2nd",
-    age: "—",
-    ig: "@—"
-  },
-  verifiedFields: [],
-  photoUrl: "./images/mathew.jpg",
-  createdAt: Date.now()
-},
 
 
     // Other profiles (these show on Profiles page)
@@ -110,17 +110,7 @@ function seedIfEmpty() {
     },
 
     // Past Hot Guys archive (these show in archive section)
-    {
-      id: "hot-history-1",
-      category: "hot-history",
-      badge: "Hot Guy of the Week (Past)",
-      name: "Damson (Week 1)",
-      caption: "Archive pick ✨",
-      aboutFields: { major: "—", year: "—", ig: "@—" },
-      verifiedFields: [],
-      photoUrl: "./images/damson.jpg",
-      createdAt: daysAgo(21)
-    },
+    
     {
       id: "hot-history-2",
       category: "hot-history",
