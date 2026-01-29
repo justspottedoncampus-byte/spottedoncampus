@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profiles • Mustang Spotlight</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">🐎</div>
+      <div>
+        <div class="title">Mustang Spotlight</div>
+        <div class="tagline">save a horse, ride a mustang</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="./index.html">Home</a>
+      <a href="./profiles.html">Profiles</a>
+      <a href="./index.html#submit">Submit</a>
+    </nav>
+
+    <a class="cta" href="./index.html#submit">Submit a Mustang</a>
+  </header>
+
+  <main class="container section">
+    <h2>Profiles</h2>
+<p class="small muted">
+  Spotted at Western — community submitted profiles.
+  <span style="margin-left:6px;">
+    <span style="color:#f5c542; font-weight:700;">★</span>
+    indicates verified information.
+  </span>
+</p>
+
+    <p class="small muted">Click a person to open their profile and add comments.</p>
+
+    <section class="section">
+      <h3>Past Hot Guys of the Week</h3>
+      <p class="small muted">The archive 🏆</p>
+      <div id="pastHotContainer" class="cards"></div>
+    </section>
+
+    <section class="section">
+      <h3>Other Profiles</h3>
+      <div id="otherContainer" class="cards"></div>
+    </section>
+
+    <footer class="footer">
+      <div class="small">consent-only • be kind 🐎</div>
+    </footer>
+  </main>
+
+  <script src="profiles.js"></script>
+</body>
+</html>
+

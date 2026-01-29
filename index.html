@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Western Select</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">🐎</div>
+      <div>
+        <div class="title">Western Select </div>
+        <div class="tagline">save a horse, ride a mustang</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="./index.html">Home</a>
+      <a href="./profiles.html">Profiles</a>
+      <a href="#submit">Submit</a>
+      <a href="#remove">Removal</a>
+    </nav>
+
+    <a class="cta" href="#submit">Submit a Mustang</a>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Western’s Mustang Wall <span class="muted">(consent-only)</span></h1>
+        <p class="lead">
+          Submit yourself (or someone who <b>said yes</b>), add a cute caption, and we’ll feature a
+          <b>Hot Guy of the Week</b>. Be respectful.
+        </p>
+
+        <div class="notice">
+          <b>Consent only:</b> Submit yourself, or only submit someone else if you have clear permission.
+          No minors. If something is posted without consent, request removal below.
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="card">
+          <h2 class="h2">Scan to Submit</h2>
+          <p class="small">This QR opens the submit section on this page.</p>
+          <div class="qr-wrap"><div id="qrBox" class="qr-box"></div></div>
+          <div class="small">QR points to: <span id="qrUrlText"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOT + HONORABLES -->
+    <section id="hotguy" class="section">
+      <div class="section-head">
+        <h2>Hot Guy of the Week</h2>
+        <div class="row">
+          <a class="button small" id="openHotProfile" href="./profile.html?id=hotguy-damson">Open profile</a>
+        </div>
+      </div>
+
+      <div class="hot-layout">
+        <!-- LEFT: Hot Guy big -->
+        <article class="card featured featured-main">
+          <div class="featured-img">
+            <div class="photo-frame vertical" id="featuredFrame" aria-label="Hot Guy of the Week photo">
+              <div class="placeholder">
+                <div class="ph-emoji">📸</div>
+                <div class="ph-text">Hot Guy photo loads here</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="featured-body">
+            <div class="pill">This Week</div> 
+
+            <h3 id="featuredName">Loading…</h3>
+            <p id="featuredCaption" class="muted"></p>
+<p class="small muted" id="slogan">save a horse, ride a mustang🐎</p>
+            <div class="divider"></div>
+
+            <h4 style="margin:0 0 8px">About</h4>
+            <ul class="small" id="featuredAbout"></ul>
+
+            <div class="divider"></div>
+
+            <a class="button primary" href="./profile.html?id=hotguy-damson">Go to Hot Guy profile</a>
+          </div>
+        </article>
+
+        <!-- RIGHT: Honorable mentions column -->
+        <aside class="card hm-column">
+          <div class="hm-head">
+            <h3 style="margin:0">Honorable Mentions</h3>
+          </div>
+          <p class="small muted" style="margin-top:10px">
+            Click a mention to open their profile + add comments.
+          </p>
+
+          <div id="hmList" class="hm-list"></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SUBMIT -->
+    <section id="submit" class="section">
+      <h2>Submit a Mustang</h2>
+
+      <div class="grid">
+        <div class="card">
+          <form id="submitForm" class="form">
+            <label class="field">
+              <span>Name / Nickname (optional)</span>
+              <input type="text" id="name" placeholder="e.g., Purple Hoodie Guy" maxlength="40" />
+            </label>
+
+            <label class="field">
+              <span>Instagram handle (optional)</span>
+              <input type="text" id="handle" placeholder="@handle" maxlength="40" />
+            </label>
+
+            <label class="field">
+              <span>Caption</span>
+              <textarea id="caption" placeholder="Say something cute/funny (keep it respectful)..." maxlength="140" required></textarea>
+              <div class="hint"><span id="capCount">0</span>/140</div>
+            </label>
+
+            <label class="field">
+              <span>Photo (local preview)</span>
+              <input type="file" id="photo" accept="image/*" />
+              <div class="small muted">
+                Demo mode: this saves to your browser storage only (local).
+              </div>
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" id="consent" required />
+              <span>I confirm this submission is with consent (it’s me, or I have clear permission).</span>
+            </label>
+
+            <div class="row">
+              <button class="button primary" type="submit">Submit</button>
+              <button class="button ghost" type="button" id="clearBtn">Clear</button>
+            </div>
+
+            <div class="result" id="result" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3>Preview</h3>
+
+          <div class="preview">
+            <div class="photo-frame vertical" id="previewFrame">
+              <div class="placeholder">
+                <div class="ph-emoji">🫶</div>
+                <div class="ph-text">Your preview will show here</div>
+              </div>
+            </div>
+
+            <div class="photo-controls">
+              <div class="control-row">
+                <label>Zoom</label>
+                <input id="previewZoom" type="range" min="1" max="2.5" step="0.05" value="1" />
+                <button class="button small" id="previewReset" type="button">Reset</button>
+              </div>
+              <div class="small muted">Tip: drag photo to reposition.</div>
+            </div>
+
+            <div>
+              <div class="pill">Pending review</div>
+              <h4 id="previewName">Name / Nickname</h4>
+              <p id="previewCaption" class="muted">Caption preview…</p>
+
+              <div class="meta">
+                <span id="previewHandle">@handle</span>
+                <span>•</span>
+                <span id="previewTime">just now</span>
+              </div>
+
+              <div class="divider"></div>
+
+              <a class="button ghost" href="./profiles.html">Go to Other Profiles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REMOVAL -->
+    <section id="remove" class="section">
+      <h2>Request Removal</h2>
+
+      <div class="grid">
+        <div class="card">
+          <form id="removeForm" class="form">
+            <label class="field">
+              <span>Your name (optional)</span>
+              <input type="text" id="rName" maxlength="50" placeholder="e.g., John" />
+            </label>
+
+            <label class="field">
+              <span>Link / details to identify the post</span>
+              <textarea
+                id="rDetails"
+                required
+                maxlength="220"
+                placeholder="Describe the post (name/handle/caption). If you have a link, paste it here."></textarea>
+              <div class="hint"><span id="remCount">0</span>/220</div>
+            </label>
+
+            <button class="button danger" type="submit">Submit removal request</button>
+            <div class="result" id="removeResult" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3>Consent-only</h3>
+          <p class="small">
+            If someone is posted without permission, we remove it. This is a demo site, so this form just shows how it would work.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="small">consent-only • be kind 🐎</div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

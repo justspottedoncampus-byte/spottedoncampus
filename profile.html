@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profile • Mustang Spotlight</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">🐎</div>
+      <div>
+        <div class="title">Mustang Spotlight</div>
+        <div class="tagline">save a horse, ride a mustang</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="./index.html">Home</a>
+      <a href="./profiles.html">Profiles</a>
+      <a href="./index.html#submit">Submit</a>
+    </nav>
+  </header>
+
+  <main class="container section">
+    <a class="button ghost small" href="javascript:history.back()">← Back</a>
+
+    <div class="grid" style="margin-top:14px">
+      <!-- LEFT -->
+      <div class="card">
+        <div class="photo-frame vertical" id="profileFrame">
+          <div class="placeholder">
+            <div class="ph-emoji">📸</div>
+            <div class="ph-text">No photo</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="card">
+        <div class="pill" id="badge">Profile</div>
+        <h2 id="pName">Loading…</h2>
+        <p id="pCaption" class="muted"></p>
+        <p class="small muted" id="pDate"></p>
+
+        <div class="divider"></div>
+
+        <h3>About</h3>
+        <ul class="small" id="pAbout"></ul>
+
+        <!-- DM to verify -->
+        <div class="verify-banner">
+          <div class="pill">Verify info</div>
+          <p class="small muted" style="margin:8px 0 0;">
+            If any info here is wrong (or you want it verified), DM us on Instagram:
+            <a class="verify-link" href="https://instagram.com/YOUR_HANDLE" target="_blank" rel="noreferrer">@YOUR_HANDLE</a>
+          </p>
+        </div>
+
+        <!-- Prompt to add missing info -->
+        <div class="verify-banner" style="margin-top:10px;">
+          <div class="pill">Help fill in the blanks</div>
+          <p class="small muted" style="margin:8px 0 0;">
+            Know their <b>major</b>, <b>year</b>, or other basic info? Drop it in the comments like:
+            <br><span class="small">“Major: BMOS • Year: 3rd”</span>
+       
+
+        <div class="divider"></div>
+
+        <h3>Comments</h3>
+        <form id="commentForm" class="form">
+          <label class="field">
+            <span>Your name (optional)</span>
+            <input id="commentName" maxlength="40" placeholder="Anonymous" />
+          </label>
+
+          <!-- Quick Info -->
+          <label class="field">
+            <span>Quick info (optional)</span>
+            <input id="commentInfo" maxlength="80" placeholder="e.g. BMOS • 3rd year • 21" />
+          </label>
+
+          <label class="field">
+            <span>Comment</span>
+            <textarea id="commentText" maxlength="200" required placeholder="Leave a comment… (keep it respectful)"></textarea>
+          </label>
+
+          <button class="button primary" type="submit">Post comment</button>
+        </form>
+
+        <div class="divider"></div>
+
+        <ul id="commentList" class="comment-list"></ul>
+      </div>
+    </div>
+  </main>
+
+  <script src="profile.js"></script>
+</body>
+</html>
